@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func pressStart(sender: AnyObject) {
+    @IBAction func Start(sender: AnyObject) {
         if (!isRuning) {
             isRuning = true
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(timerHanler), userInfo: nil, repeats: true)
@@ -37,13 +37,13 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func pressPause(sender: AnyObject) {
+    @IBAction func pause(sender: AnyObject) {
         timer.invalidate();
         isRuning = false;
     }
     
 
-    @IBAction func pressStop(sender: AnyObject) {
+    @IBAction func reset(sender: AnyObject) {
         timer.invalidate();
         hour = 0;
         minute = 0;
@@ -51,9 +51,12 @@ class ViewController: UIViewController {
         minSecond = 0;
         isRuning = false;
         
-        lbDisplay.text = convertNumber2Text(hour) + ":" + convertNumber2Text(minute) + ":" + convertNumber2Text(second) + "." + convertNumber2Text(minSecond);
+        lbDisplay.text = "00:00:00.00";
     }
     
+    /*
+     * timer call each 1/100s
+     */
     func timerHanler(){
         minSecond += 1;
         print(minSecond);
@@ -72,6 +75,9 @@ class ViewController: UIViewController {
         lbDisplay.text = convertNumber2Text(hour) + ":" + convertNumber2Text(minute) + ":" + convertNumber2Text(second) + "." + convertNumber2Text(minSecond);
     }
     
+    /*
+     * convet int to string by add 0
+     */
     func convertNumber2Text(number : Int) -> String {
         var resutl : String = String(number);
         if (number < 10) {
