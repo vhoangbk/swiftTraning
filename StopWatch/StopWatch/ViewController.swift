@@ -11,9 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var lbDisplay: UILabel!
-    var countTime : UInt64 = 0;
     var timer = NSTimer();
     var isRuning = false;
+    var hour : Int = 0;
+    var minute : Int = 0;
+    var second : Int = 0;
+    var minSecond : Int = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,7 @@ class ViewController: UIViewController {
     @IBAction func pressStart(sender: AnyObject) {
         if (!isRuning) {
             isRuning = true
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(timerHanler), userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(timerHanler), userInfo: nil, repeats: true)
         }
         
     }
@@ -42,13 +45,39 @@ class ViewController: UIViewController {
 
     @IBAction func pressStop(sender: AnyObject) {
         timer.invalidate();
-        countTime = 0;
+        hour = 0;
+        minute = 0;
+        second = 0;
+        minSecond = 0;
         isRuning = false;
+        
+        lbDisplay.text = convertNumber2Text(hour) + ":" + convertNumber2Text(minute) + ":" + convertNumber2Text(second) + "." + convertNumber2Text(minSecond);
     }
     
     func timerHanler(){
-        countTime += 1;
-        print(countTime);
+        minSecond += 1;
+        print(minSecond);
+        if (minSecond == 100) {
+            minSecond = 0;
+            second += 1;
+        }
+        if (second == 60) {
+            second = 0;
+            minute += 1;
+        }
+        if (minute == 60) {
+            hour += 1;
+        }
+        
+        lbDisplay.text = convertNumber2Text(hour) + ":" + convertNumber2Text(minute) + ":" + convertNumber2Text(second) + "." + convertNumber2Text(minSecond);
+    }
+    
+    func convertNumber2Text(number : Int) -> String {
+        var resutl : String = String(number);
+        if (number < 10) {
+            resutl = "0" + resutl;
+        }
+        return resutl;
     }
 }
 
