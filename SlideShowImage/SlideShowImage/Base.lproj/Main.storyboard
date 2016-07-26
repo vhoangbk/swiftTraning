@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideShowImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-9M-Vc3">
+                                <rect key="frame" x="158" y="25" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSM-Of-lLN">
+                                <rect key="frame" x="66" y="328" width="59" height="30"/>
+                                <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="previous:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqp-GB-6Qe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PJ-Hd-bbd">
+                                <rect key="frame" x="277" y="328" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="46F-E4-onc"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-D6-QlT">
+                                <rect key="frame" x="0.0" y="51" width="375" height="257"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="saB-N8-B5A"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YSM-Of-lLN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="0gz-pk-Kdy"/>
+                            <constraint firstItem="c5K-D6-QlT" firstAttribute="top" secondItem="RP6-9M-Vc3" secondAttribute="bottom" constant="5" id="MaZ-Lb-pIA"/>
+                            <constraint firstItem="RP6-9M-Vc3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="Oy4-Ev-p9s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2PJ-Hd-bbd" secondAttribute="trailing" constant="50" id="Tld-Px-nBR"/>
+                            <constraint firstItem="RP6-9M-Vc3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jGD-KA-SJy"/>
+                            <constraint firstAttribute="trailing" secondItem="c5K-D6-QlT" secondAttribute="trailing" id="jbY-du-NZE"/>
+                            <constraint firstItem="YSM-Of-lLN" firstAttribute="top" secondItem="c5K-D6-QlT" secondAttribute="bottom" constant="20" id="mD8-Fl-X6Z"/>
+                            <constraint firstItem="2PJ-Hd-bbd" firstAttribute="baseline" secondItem="YSM-Of-lLN" secondAttribute="baseline" id="x68-X3-8M9"/>
+                            <constraint firstItem="c5K-D6-QlT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xRC-66-a2V"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="lbName" destination="RP6-9M-Vc3" id="lbf-Jv-2sh"/>
+                        <outlet property="scrollImage" destination="c5K-D6-QlT" id="EbR-WP-4q0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501.5" y="439.5"/>
+        </scene>
+    </scenes>
+</document>
