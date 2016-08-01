@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShowImageFromInternet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="bBp-To-zqA">
+                                <rect key="frame" x="16" y="60" width="343" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="EaQ-4Q-jBs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcq-oZ-iOq">
+                                <rect key="frame" x="56" y="410" width="53" height="30"/>
+                                <state key="normal" title="image 1"/>
+                                <connections>
+                                    <action selector="showImage1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bw3-PE-mZs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVX-mG-LMw">
+                                <rect key="frame" x="264" y="410" width="55" height="30"/>
+                                <state key="normal" title="image 2"/>
+                                <connections>
+                                    <action selector="showImage2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6YG-b3-j6Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bBp-To-zqA" secondAttribute="trailing" id="1YI-30-Rl4"/>
+                            <constraint firstItem="bBp-To-zqA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="A8o-ti-qOj"/>
+                            <constraint firstItem="wcq-oZ-iOq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="MAJ-Xw-OOy"/>
+                            <constraint firstItem="bBp-To-zqA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RCf-2h-rPY"/>
+                            <constraint firstItem="yVX-mG-LMw" firstAttribute="baseline" secondItem="wcq-oZ-iOq" secondAttribute="baseline" id="ZAA-rU-0nl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yVX-mG-LMw" secondAttribute="trailing" constant="40" id="hcM-Hh-8Dc"/>
+                            <constraint firstItem="bBp-To-zqA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hfV-fh-R5b"/>
+                            <constraint firstItem="wcq-oZ-iOq" firstAttribute="top" secondItem="bBp-To-zqA" secondAttribute="bottom" constant="50" id="hnA-cg-UbG"/>
+                            <constraint firstAttribute="width" secondItem="bBp-To-zqA" secondAttribute="width" id="uNq-En-NR5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hfV-fh-R5b"/>
+                                <exclude reference="uNq-En-NR5"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageview" destination="bBp-To-zqA" id="FdA-JS-hLy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239.5" y="429.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="noimage" width="400" height="225"/>
+    </resources>
+</document>
