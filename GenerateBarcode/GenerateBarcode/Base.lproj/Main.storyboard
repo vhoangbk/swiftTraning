@@ -24,28 +24,39 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-BP-TaD">
-                                <rect key="frame" x="155" y="195" width="64" height="30"/>
-                                <state key="normal" title="Generate"/>
+                                <rect key="frame" x="36" y="195" width="124" height="30"/>
+                                <state key="normal" title="Generate barcode"/>
                                 <connections>
                                     <action selector="GenerateBarcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZKB-fb-vIV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WAh-hE-V4n">
-                                <rect key="frame" x="71" y="270" width="233" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WAh-hE-V4n">
+                                <rect key="frame" x="71" y="270" width="233" height="233"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="evo-fB-GmM"/>
+                                    <constraint firstAttribute="width" constant="233" id="9bY-gB-iyv"/>
+                                    <constraint firstAttribute="height" constant="233" id="evo-fB-GmM"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maq-Ae-3gy">
+                                <rect key="frame" x="220" y="195" width="116" height="30"/>
+                                <state key="normal" title="Generate qrcode"/>
+                                <connections>
+                                    <action selector="GenerateBarcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hL-n2-nss"/>
+                                    <action selector="GenerateQrcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Owb-AS-Tca"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WAh-hE-V4n" firstAttribute="top" secondItem="ab4-BP-TaD" secondAttribute="bottom" constant="45" id="0Kw-gg-T9S"/>
+                            <constraint firstItem="maq-Ae-3gy" firstAttribute="baseline" secondItem="ab4-BP-TaD" secondAttribute="baseline" id="7kd-1H-Lf4"/>
+                            <constraint firstItem="maq-Ae-3gy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="90" id="MeE-y6-Xmv"/>
                             <constraint firstItem="ab4-BP-TaD" firstAttribute="top" secondItem="H9e-dc-fWc" secondAttribute="bottom" constant="45" id="P53-Ob-u6B"/>
                             <constraint firstItem="WAh-hE-V4n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T5q-XA-10M"/>
                             <constraint firstItem="H9e-dc-fWc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Vzi-6X-Q8s"/>
                             <constraint firstItem="H9e-dc-fWc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bas-wJ-mgI"/>
                             <constraint firstItem="WAh-hE-V4n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="cD0-Jw-FFf"/>
-                            <constraint firstItem="ab4-BP-TaD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kPJ-KR-jX7"/>
+                            <constraint firstItem="ab4-BP-TaD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-90" id="kPJ-KR-jX7"/>
                             <constraint firstItem="H9e-dc-fWc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="vNx-JO-Vw4"/>
                         </constraints>
                     </view>
