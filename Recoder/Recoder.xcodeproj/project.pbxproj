@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F770E911D50E5F300F6040D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F770E901D50E5F300F6040D /* Assets.xcassets */; };
 		8896DE9F1D509292000129BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896DE9E1D509292000129BD /* AppDelegate.swift */; };
 		8896DEA11D509292000129BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896DEA01D509292000129BD /* ViewController.swift */; };
 		8896DEA41D509292000129BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8896DEA21D509292000129BD /* Main.storyboard */; };
-		8896DEA61D509292000129BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8896DEA51D509292000129BD /* Assets.xcassets */; };
 		8896DEA91D509292000129BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8896DEA71D509292000129BD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F770E901D50E5F300F6040D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8896DE9B1D509292000129BD /* Recoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8896DE9E1D509292000129BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8896DEA01D509292000129BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8896DEA31D509292000129BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8896DEA51D509292000129BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8896DEA81D509292000129BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8896DEAA1D509292000129BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8896DEB01D50A092000129BD /* test.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.m4a; sourceTree = "<group>"; };
@@ -59,9 +59,9 @@
 				8896DE9E1D509292000129BD /* AppDelegate.swift */,
 				8896DEA01D509292000129BD /* ViewController.swift */,
 				8896DEA21D509292000129BD /* Main.storyboard */,
-				8896DEA51D509292000129BD /* Assets.xcassets */,
 				8896DEA71D509292000129BD /* LaunchScreen.storyboard */,
 				8896DEAA1D509292000129BD /* Info.plist */,
+				7F770E901D50E5F300F6040D /* Assets.xcassets */,
 			);
 			path = Recoder;
 			sourceTree = "<group>";
@@ -98,6 +98,7 @@
 				TargetAttributes = {
 					8896DE9A1D509292000129BD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M4XKHPXK2E;
 					};
 				};
 			};
@@ -125,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8896DEA91D509292000129BD /* LaunchScreen.storyboard in Resources */,
-				8896DEA61D509292000129BD /* Assets.xcassets in Resources */,
+				7F770E911D50E5F300F6040D /* Assets.xcassets in Resources */,
 				8896DEA41D509292000129BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,10 +252,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Recoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paraline.Recoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -262,10 +267,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Recoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paraline.Recoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -288,6 +297,7 @@
 				8896DEAF1D509292000129BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

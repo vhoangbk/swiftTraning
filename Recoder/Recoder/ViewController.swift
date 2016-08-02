@@ -11,24 +11,29 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+	@IBOutlet var btnRecord: UIButton!
+	@IBOutlet var btnStop: UIButton!
+	@IBOutlet var btnPlay: UIButton!
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
-    var isAllowed : Bool = false;
-    var isRecording : Bool = false;
-    
     var path : String?;
     let fileName : String = "record.m4a";
+	
+	var audioPlayer : AVAudioPlayer?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+		
+		btnRecord.enabled = false;
+		btnStop.enabled = false;
+		btnPlay.enabled = false
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         path = paths[0]
-        
-        
+		
         recordingSession = AVAudioSession.sharedInstance();
         
         do {
@@ -37,13 +42,37 @@ class ViewController: UIViewController {
             try recordingSession.setActive(true)
             
             recordingSession.requestRecordPermission({ (allowed : Bool) in
-                self.isAllowed = allowed;
+			
+				if (allowed){
+					self.btnRecord.enabled = true;
+					self.prepareRecode();
+				}
+				
             })
 
         } catch {
             // failed to record!
         }
     }
+	
+	func prepareRecode() {
+		let audioURL = NSURL(fileURLWithPath: path!).URLByAppendingPathComponent(fileName)
+			
+		let settings = [
+			AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+			AVSampleRateKey: 12000.0,
+			AVNumberOfChannelsKey: 1 as NSNumber,
+			AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
+		]
+		
+		do {
+			audioRecorder = try AVAudioRecorder(URL: audioURL, settings: settings);
+			audioRecorder.prepareToRecord()
+			
+		} catch {
+			print("audioRecorder error")
+		}
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,47 +80,35 @@ class ViewController: UIViewController {
     }
 
     @IBAction func record(sender: AnyObject) {
-        
-        if (isAllowed == false || isRecording == true) {
-            return;
-        }
-        
-        let audioURL = NSURL(fileURLWithPath: path!).URLByAppendingPathComponent(fileName)
-        
-        let settings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 12000.0,
-            AVNumberOfChannelsKey: 1 as NSNumber,
-            AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
-        ]
-        
-        do {
-            audioRecorder = try AVAudioRecorder(URL: audioURL, settings: settings);
-            audioRecorder.record()
-            isRecording = true;
-            
-        } catch {
-            
-        }
+		
+		if (!audioRecorder.recording) {
+			audioRecorder.record();
+			
+			btnRecord.enabled = false;
+			btnStop.enabled = true;
+		}
+
     }
 
     @IBAction func stop(sender: AnyObject) {
-        isRecording = false;
-        audioRecorder.stop();
-        audioRecorder = nil;
+		if (audioRecorder.recording) {
+			audioRecorder.stop();
+			
+			btnRecord.enabled = true;
+			btnStop.enabled = false;
+			btnPlay.enabled = true;
+		}
     }
     
     @IBAction func play(sender: AnyObject) {
-        
-        let audioURL = NSURL(fileURLWithPath: path!).URLByAppendingPathComponent(fileName);
-        
-        do{
-            let audioPlayer = try AVAudioPlayer(contentsOfURL: audioURL);
-            audioPlayer.play();
-        } catch{
-            print("play error")
-        }
-        
+		let audioURL = NSURL(fileURLWithPath: path!).URLByAppendingPathComponent(fileName)
+		
+		do{
+			try audioPlayer = AVAudioPlayer(contentsOfURL: audioURL);
+		}catch{
+			print("audioPlayer error")
+		}
+		self.audioPlayer?.play();
     }
 }
 
