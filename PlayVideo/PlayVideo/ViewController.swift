@@ -12,7 +12,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    let movieLink : String = "http://channelz2.mp3.zdn.vn/zv/1235ce4ffaebab11711d49a1e588fc42/579f0f90/2014/01/16/c/2/c23b1970ed9006b0ad67f81c8e22ead9.mp4"
+    let movieLink : String = "http://channelz2.mp3.zdn.vn/zv/abb5bbe33a72c614c97c1a1c52ceb9e1/579ff090/2016/07/19/0/f/0f76cbc7213d033938e0d1364c30dd64.mp4"
     
     var moviePlayer : AVPlayer?;
     
