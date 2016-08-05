@@ -20,17 +20,18 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H9e-dc-fWc">
                                 <rect key="frame" x="50" y="120" width="275" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="0.54637257829999997" green="0.80530532529999999" blue="0.39185789199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-BP-TaD">
                                 <rect key="frame" x="36" y="195" width="124" height="30"/>
                                 <state key="normal" title="Generate barcode"/>
                                 <connections>
-                                    <action selector="GenerateBarcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZKB-fb-vIV"/>
+                                    <action selector="genarateBarcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YwF-dI-LeK"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WAh-hE-V4n">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="WAh-hE-V4n">
                                 <rect key="frame" x="71" y="270" width="233" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="9bY-gB-iyv"/>
@@ -41,8 +42,7 @@
                                 <rect key="frame" x="220" y="195" width="116" height="30"/>
                                 <state key="normal" title="Generate qrcode"/>
                                 <connections>
-                                    <action selector="GenerateBarcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hL-n2-nss"/>
-                                    <action selector="GenerateQrcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Owb-AS-Tca"/>
+                                    <action selector="generateQrcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="az2-Y4-oc1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,12 +62,15 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="imgBarcode" destination="WAh-hE-V4n" id="hwv-7G-Y3d"/>
-                        <outlet property="tfText" destination="H9e-dc-fWc" id="soo-JW-pSL"/>
+                        <outlet property="imageDisplay" destination="WAh-hE-V4n" id="HxM-a8-j6l"/>
+                        <outlet property="tfInput" destination="H9e-dc-fWc" id="ABY-a8-sVn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="noimage" width="400" height="225"/>
+    </resources>
 </document>

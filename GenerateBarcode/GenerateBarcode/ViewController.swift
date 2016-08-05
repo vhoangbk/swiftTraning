@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var imgBarcode: UIImageView!
-    @IBOutlet weak var tfText: UITextField!
+	@IBOutlet var tfInput: UITextField!
+	@IBOutlet var imageDisplay: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,47 +23,43 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+	@IBAction func genarateBarcode(sender: AnyObject) {
+		imageDisplay.image = generateBarcodeFromString(tfInput.text!)
+	}
 
-    @IBAction func GenerateBarcode(sender: AnyObject) {
-        let image = generateBarcodeFromString(tfText.text!);
-        imgBarcode.image = image;
-    }
-    
-    @IBAction func GenerateQrcode(sender: AnyObject) {
-        let image = generateQRCodeFromString(tfText.text!);
-        imgBarcode.image = image;
-    }
-    
-    func generateBarcodeFromString(string: String) -> UIImage? {
-        let data = string.dataUsingEncoding(NSASCIIStringEncoding)
-        
-        if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
-            filter.setValue(data, forKey: "inputMessage")
-            let transform = CGAffineTransformMakeScale(3, 3)
-            
-            if let output = filter.outputImage?.imageByApplyingTransform(transform) {
-                return UIImage(CIImage: output)
-            }
-        }
-        
-        return nil
-    }
-    
-    func generateQRCodeFromString(string: String) -> UIImage? {
-        let data = string.dataUsingEncoding(NSISOLatin1StringEncoding)
-        
-        if let filter = CIFilter(name: "CIQRCodeGenerator") {
-            filter.setValue(data, forKey: "inputMessage")
-            filter.setValue("H", forKey: "inputCorrectionLevel")
-            let transform = CGAffineTransformMakeScale(10, 10)
-            
-            if let output = filter.outputImage?.imageByApplyingTransform(transform) {
-                return UIImage(CIImage: output)
-            }
-        }
-        
-        return nil
-    }
-
+	@IBAction func generateQrcode(sender: AnyObject) {
+		imageDisplay.image = generateQrcodeFromString(tfInput.text!)
+	}
+	
+	func generateBarcodeFromString(string : String) -> UIImage? {
+		let data = string.dataUsingEncoding(NSASCIIStringEncoding)
+		let filter = CIFilter(name: "CICode128BarcodeGenerator")
+		
+		filter?.setValue(data, forKey: "inputMessage")
+		let transform = CGAffineTransformMakeScale(10, 10)
+		
+		let output = filter?.outputImage?.imageByApplyingTransform(transform)
+		if (output != nil) {
+			return UIImage(CIImage: output!)
+		}
+		return nil;
+		
+	}
+	
+	
+	func generateQrcodeFromString(string : String) -> UIImage? {
+		let data = string.dataUsingEncoding(NSASCIIStringEncoding)
+		let filter = CIFilter(name: "CIQRCodeGenerator")
+		
+		filter?.setValue(data, forKey: "inputMessage")
+		let transform = CGAffineTransformMakeScale(10, 10)
+		
+		let output = filter?.outputImage?.imageByApplyingTransform(transform)
+		if (output != nil) {
+			return UIImage(CIImage: output!)
+		}
+		return nil;
+	}
+	
 }
 
