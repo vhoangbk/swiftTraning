@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FB684541D55EF8900D29C3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB684531D55EF8900D29C3B /* Assets.xcassets */; };
 		8883EF441D51C2F5008FAF7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883EF431D51C2F5008FAF7D /* AppDelegate.swift */; };
 		8883EF461D51C2F5008FAF7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883EF451D51C2F5008FAF7D /* ViewController.swift */; };
 		8883EF491D51C2F5008FAF7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8883EF471D51C2F5008FAF7D /* Main.storyboard */; };
-		8883EF4B1D51C2F5008FAF7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8883EF4A1D51C2F5008FAF7D /* Assets.xcassets */; };
 		8883EF4E1D51C2F5008FAF7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8883EF4C1D51C2F5008FAF7D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7FB684531D55EF8900D29C3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8883EF401D51C2F5008FAF7D /* ScanQrcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanQrcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8883EF431D51C2F5008FAF7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8883EF451D51C2F5008FAF7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8883EF481D51C2F5008FAF7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8883EF4A1D51C2F5008FAF7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8883EF4D1D51C2F5008FAF7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8883EF4F1D51C2F5008FAF7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,9 +57,9 @@
 				8883EF431D51C2F5008FAF7D /* AppDelegate.swift */,
 				8883EF451D51C2F5008FAF7D /* ViewController.swift */,
 				8883EF471D51C2F5008FAF7D /* Main.storyboard */,
-				8883EF4A1D51C2F5008FAF7D /* Assets.xcassets */,
 				8883EF4C1D51C2F5008FAF7D /* LaunchScreen.storyboard */,
 				8883EF4F1D51C2F5008FAF7D /* Info.plist */,
+				7FB684531D55EF8900D29C3B /* Assets.xcassets */,
 			);
 			path = ScanQrcode;
 			sourceTree = "<group>";
@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					8883EF3F1D51C2F5008FAF7D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M4XKHPXK2E;
 					};
 				};
 			};
@@ -123,7 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8883EF4E1D51C2F5008FAF7D /* LaunchScreen.storyboard in Resources */,
-				8883EF4B1D51C2F5008FAF7D /* Assets.xcassets in Resources */,
+				7FB684541D55EF8900D29C3B /* Assets.xcassets in Resources */,
 				8883EF491D51C2F5008FAF7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +181,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -226,6 +228,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -251,10 +254,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScanQrcode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paraline.ScanQrcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paraline.scanqrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -263,10 +269,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScanQrcode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paraline.ScanQrcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paraline.scanqrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

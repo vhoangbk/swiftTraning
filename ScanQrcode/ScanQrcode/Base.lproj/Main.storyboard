@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,31 +19,73 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-0m-ie0">
-                                <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="320"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="YKG-6E-mgB"/>
                                     <constraint firstAttribute="height" constant="300" id="c38-zW-6wM"/>
+                                    <constraint firstAttribute="width" secondItem="RAD-0m-ie0" secondAttribute="height" multiplier="1:1" id="m78-4C-bNs"/>
                                     <constraint firstAttribute="width" secondItem="RAD-0m-ie0" secondAttribute="height" multiplier="1:1" id="nCK-5B-O76"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="YKG-6E-mgB"/>
                                         <exclude reference="c38-zW-6wM"/>
+                                        <exclude reference="nCK-5B-O76"/>
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR5-XA-Qdl">
+                                <rect key="frame" x="93" y="390" width="35" height="30"/>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <action selector="scan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mZL-gT-h0J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mo6-6Z-LtH">
+                                <rect key="frame" x="194" y="390" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypy-2m-Kto"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSK-HE-DBe">
+                                <rect key="frame" x="20" y="460" width="280" height="24"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="3jW-XA-MOP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.11596554069999999" green="0.80530532529999999" blue="0.75408756610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RAD-0m-ie0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="IDU-XF-ncx"/>
+                            <constraint firstItem="gSK-HE-DBe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="1Gx-Td-B3M"/>
+                            <constraint firstItem="hR5-XA-Qdl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="HHS-lY-L6l"/>
+                            <constraint firstItem="RAD-0m-ie0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IDU-XF-ncx"/>
+                            <constraint firstItem="gSK-HE-DBe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGt-CY-xm5"/>
+                            <constraint firstItem="mo6-6Z-LtH" firstAttribute="baseline" secondItem="hR5-XA-Qdl" secondAttribute="baseline" id="MEE-Gt-Gbh"/>
+                            <constraint firstItem="hR5-XA-Qdl" firstAttribute="top" secondItem="RAD-0m-ie0" secondAttribute="bottom" constant="50" id="MbW-KJ-LQ4"/>
+                            <constraint firstItem="RAD-0m-ie0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="T14-4n-qus"/>
                             <constraint firstItem="RAD-0m-ie0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U6u-IY-HEK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RAD-0m-ie0" secondAttribute="bottom" id="r2o-py-893"/>
+                            <constraint firstItem="gSK-HE-DBe" firstAttribute="top" secondItem="hR5-XA-Qdl" secondAttribute="bottom" constant="40" id="rG5-d2-k1K"/>
                             <constraint firstItem="RAD-0m-ie0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ud3-4G-lsc"/>
+                            <constraint firstItem="mo6-6Z-LtH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50" id="z4P-mJ-dAn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ud3-4G-lsc"/>
+                                <exclude reference="r2o-py-893"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="8la-Re-ZHp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="lbResult" destination="gSK-HE-DBe" id="XBr-Jl-Tq6"/>
                         <outlet property="previewView" destination="RAD-0m-ie0" id="Qml-n2-wr8"/>
                     </connections>
                 </viewController>
