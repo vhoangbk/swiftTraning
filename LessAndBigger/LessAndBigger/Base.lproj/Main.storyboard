@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="width" constant="100" id="nRG-sE-eKM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_left" translatesAutoresizingMaskIntoConstraints="NO" id="fYj-Vg-hK7">
@@ -46,21 +46,21 @@
                                     <constraint firstAttribute="width" constant="100" id="r5g-nT-aRw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eet-bb-Qz4">
                                 <rect key="frame" x="105" y="231" width="45" height="54"/>
                                 <state key="normal" image="arrow_left"/>
                                 <connections>
-                                    <action selector="less:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6gn-FK-QKY"/>
+                                    <action selector="less:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f3x-mv-TEi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCV-e7-Sac">
                                 <rect key="frame" x="225" y="231" width="45" height="54"/>
                                 <state key="normal" image="arrow_right"/>
                                 <connections>
-                                    <action selector="bigger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UoL-dr-4zK"/>
+                                    <action selector="bigger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kPW-aa-diq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-5B-cl7">
@@ -94,7 +94,7 @@
                                     <color key="titleColor" red="0.0025418143311513042" green="0.36111486541774973" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="again:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDv-Zg-QeV"/>
+                                    <action selector="again:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T6N-oC-HCj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,12 +130,12 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="btnLeft" destination="Eet-bb-Qz4" id="fFO-9V-s3Z"/>
-                        <outlet property="btnRight" destination="vCV-e7-Sac" id="x1L-Rc-Mzn"/>
-                        <outlet property="lbLeft" destination="NKN-Za-SVU" id="yqW-ht-pXE"/>
-                        <outlet property="lbQuestion" destination="72J-BQ-03A" id="oxN-UN-AN8"/>
-                        <outlet property="lbRight" destination="N2e-KW-BZT" id="ecf-BJ-VdX"/>
-                        <outlet property="lbScore" destination="kAB-xw-RTE" id="aZc-Lq-hVh"/>
+                        <outlet property="btnBigger" destination="vCV-e7-Sac" id="gIi-kA-DnF"/>
+                        <outlet property="btnLess" destination="Eet-bb-Qz4" id="2ab-vS-M0U"/>
+                        <outlet property="lbLeft" destination="NKN-Za-SVU" id="g45-pa-Riv"/>
+                        <outlet property="lbQuestion" destination="72J-BQ-03A" id="5Ec-9t-4yx"/>
+                        <outlet property="lbRight" destination="N2e-KW-BZT" id="jRC-Ks-SDL"/>
+                        <outlet property="lbScore" destination="kAB-xw-RTE" id="6Lv-nQ-bqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
